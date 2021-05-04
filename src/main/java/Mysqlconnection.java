@@ -6,18 +6,14 @@ public class Mysqlconnection {
         Connection conn;
         try {
             conn =
-                    DriverManager.getConnection("jdbc:mysql://localhost:3306?user=root&password=123456");
+                    DriverManager.getConnection("jdbc:mysql://localhost:3306?user=root&password=");
 
-            Statement st = conn.createStatement();
-            System.out.println("show databases:\n" + st.executeQuery("show databases").toString());
-            DatabaseMetaData meta = conn.getMetaData();
-            System.out.println(meta.getTables(null, null,"%", null).getString(3));
-
+            /*Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery("select idtable1,value from table1");
             while (rs.next()){
                 System.out.println(rs.getInt("idtable1"));
                 System.out.println(rs.getString("value"));
-            }
+            }*/
 
             // Do something with the Connection
 
